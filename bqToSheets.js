@@ -64,13 +64,13 @@ function exportToSheets() {
       sheet.deleteColumns(lastColumn+1, maxColumns-lastColumn);
     }
     
-  var files = DriveApp.getFilesByName('test2_view_midBddAppli' + ' ' + date);
+  var files = DriveApp.getFilesByName(DocumentName + date);
   while (files.hasNext()) {
     var file = files.next();
     Logger.log(file.getName());
  }
   Logger.log(typeof file);
-  var folder = DriveApp.getFolderById('1aauqGcTG5fpKAPptaoOHshVcNf0LymmB');
+  var folder = DriveApp.getFolderById(FolderId);
   Logger.log(folder);
   folder.addFile(file);
 }
